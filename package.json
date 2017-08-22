@@ -13,7 +13,8 @@
     "node": ">=4"
   },
   "scripts": {
-    "precommit": "remove-lockfiles",
+    "precommit": "remove-lockfiles && lint-staged",
+    "lint:fix": "xo --fix",
     "test": "xo && jest"
   },
   "files": [
@@ -23,8 +24,11 @@
     "lodash.indexof": "^4.0.5"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^2.3.0",
     "husky": "^0.14.3",
     "jest": "^20.0.4",
+    "lint-staged": "^4.0.3",
+    "prettier": "^1.5.3",
     "remove-lockfiles": "^1.1.1",
     "xo": "^0.18.2"
   },
@@ -32,9 +36,18 @@
     "testEnvironment": "node",
     "collectCoverage": true
   },
+  "lint-staged": {
+    "*.js": [
+      "xo",
+      "prettier --single-quote --trailing-comma es5 --write",
+      "git add"
+    ]
+  },
   "xo": {
-    "space": "true",
-    "envs": "jest"
+    "extends": "prettier",
+    "envs": [
+      "jest"
+    ]
   },
   "keywords": [
     "array",
