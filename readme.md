@@ -31,7 +31,7 @@ isArrayElem(['foo', 'bar'], 'baz');
 
 ### isArrayElem([array, …], value)
 
-Returns a `boolean` if `value` is found in `array`
+Returns `true` if `value` is element of `array`
 
 ## Related
 
