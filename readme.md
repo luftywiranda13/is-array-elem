@@ -29,9 +29,18 @@ isArrayElem(['foo', 'bar'], 'baz');
 
 ## API
 
-### isArrayElem([array, …], value)
+### isArrayElem(array, value)
 
-Returns `true` if `value` is element of `array`
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| array | `Array`  | Array to inspect |
+| value | `*` | Value to search for |
+
+#### Returns
+
+- `Boolean`
 
 ## Related
 
